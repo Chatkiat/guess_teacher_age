@@ -144,16 +144,16 @@ class _GuessState extends State<Guess> {
   }
 
   _handleClickButton() async {
-    var guest = await _login(year, month);
+    var guess = await _login(year, month);
 
-    if (guest['value'] == true) {
+    if (guess['value'] == true) {
       Navigator.pushReplacementNamed(
         context,
         '/page',
         arguments: {'year': year,'month': month},
       );
     } else {
-      _showMaterialDialog('ผลการทาย', '${guest['text']}');
+      _showMaterialDialog('ผลการทาย', '${guess['text']}');
     }
   }
 
